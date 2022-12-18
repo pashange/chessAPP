@@ -6,7 +6,7 @@
 
     width: 900px;
     height: 900px;
-    background-color: aqua;
+    background-color: rgb(168, 225, 243);
 }
 
 #boardMAIN {
@@ -54,10 +54,10 @@
 
 .light {
 
-    fill: rgb(43, 226, 73);
+    fill: rgba(43, 226, 73, 0);
 }
 
 .dark {
 
-    fill: blueviolet;
+    fill: rgb(17, 163, 207);
 }
