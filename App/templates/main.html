@@ -12,10 +12,15 @@
     </head>
     <body>
         <div id="chessboard"></div>
+        <div id="rotateBUTTON_DIV">
+            <label for="rotateBUTTON">rotate</label>
+            <button type="button" id="rotateBUTTON" onclick="rotateBOARD()">Rotate Board</button>
+        </div>
     </body>
 </html>
 <script>
 
     buildBOARD("black");
+    setBOARD();
     test();
 </script>

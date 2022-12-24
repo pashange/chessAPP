@@ -43,10 +43,12 @@
     grid-column: 1;
     width: 100%;
     height: 100%;
-    display: grid;
+    display: inline-grid;
     grid-template-columns: 100%;
+    text-align: center;
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }
+
 #boardFILE {
 
     grid-row: 3;
@@ -55,6 +57,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 100%;
+    text-align: center;
     grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }
 
@@ -62,6 +65,63 @@
 
     -webkit-user-select: none;
     user-select: none;
+}
+
+#boardFILE div {
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+#boardRANK div {
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+.boardEMPTY_SQUARE[draggable="false"] {
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* .boardPIECE_SQUARE {
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
+
+.boardPIECE {
+
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.hold {
+    
+    opacity: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.invisible {
+
+    margin: 10%;
+    opacity: 0%;
+}
+
+.mid_drag {
+
+    opacity: 100%;
 }
 
 .light {
