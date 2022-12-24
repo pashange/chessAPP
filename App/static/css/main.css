@@ -6,7 +6,7 @@
 
     width: 900px;
     height: 900px;
-    background-color: rgb(168, 225, 243);
+    background-color: rgb(140, 226, 252);
 }
 
 #boardMAIN {
@@ -105,12 +105,10 @@
     width: 100%;
     margin: 0%;
     padding: 0%;
-}
-
-.hold {
-    
-    opacity: 100%;
-    background-color: rgba(255, 255, 255, 0);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .invisible {

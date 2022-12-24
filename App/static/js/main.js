@@ -188,52 +188,35 @@ function setBOARD(fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 
         for(file = 7; file >= 0; file--) {
 
             var index = 63 - ((rank - 1)*8 + file);
-            if(boardARRAY[index] == 1) {
+            var piece = boardARRAY[index];
+            if(["1"].includes(piece)) {
                 
                 $(`#square${boardFILE[7-file]}${rank}`).html("")
                 continue;
             }
-            $(`#square${boardFILE[7-file]}${rank}`).html(`<p class="boardPIECE" draggable="true">${boardARRAY[index]}</p>`)
-            // $(`#square${boardFILE[7-file]}${rank}`).attr("draggable", true)
-            // $(`#square${boardFILE[7-file]}${rank}`).removeClass("boardEMPTY_SQUARE")
-            // $(`#square${boardFILE[7-file]}${rank}`).addClass("boardPIECE_SQUARE")
-
             
-            
+            if(piece == piece.toUpperCase()){
+                
+                $(`#square${boardFILE[7-file]}${rank}`).html(`<div class="boardPIECE" piece="${piece.toLowerCase()}" ethnicity="w" draggable="true"/>`);
+                continue;
+            }
+            $(`#square${boardFILE[7-file]}${rank}`).html(`<div class="boardPIECE" piece="${piece}" ethnicity="b" draggable="true"/>`);
         }
     }
     $(".boardPIECE").each(function(){
 
-        this.addEventListener("dragstart", dragStart);
-        this.addEventListener("drag", dragMid);
-        this.addEventListener("dragend", dragEnd);
+        
+        $(this).css({'background-image': `url('/static/img/pieces/${this.getAttribute('ethnicity')}${this.getAttribute('piece')}.png')`})
+        // this.addEventListener("mousedown", pieceCLICKED);
     })
-    console.log(boardARRAY)
 }
 
-function dragStart(){
+function pieceCLICKED() {
 
-    this.classList.add('hold');
-    piece_html = $(this)[0];
-    // start_square = $($(this.parentNode)[0]).attr("value");
-    setTimeout(() => (this.className = 'invisible'), 0); 
-}
-
-function dragMid(e) {
-
-    e.preventDefault();
-    // e.target.style.opacity = 1
-    console.log(e.target.style.opacity) 
-
-}
-function dragEnd(e) {
-
-    this.className = 'boardPIECE';
 }
 
 function test() {
 
-    console.log("RAN THRU")
     document.getElementById("boardGRID").addEventListener('mouseover', function(event) {
         // Check if the element being hovered over is a grid row
         if (event.target.classList.contains('grid-row')) {
